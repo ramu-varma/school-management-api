@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "c7a8b9d0-1e2f-3456-7890-abcdef123456",
+		"name": "School Management API",
+		"description": "API for managing schools and calculating distance from user location.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add School",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Green Valley School\",\n  \"address\": \"MG Road, Bangalore\",\n  \"latitude\": 12.9716,\n  \"longitude\": 77.5946\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/addSchool",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"addSchool"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Schools",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/listSchools?latitude=12.9716&longitude=77.5946",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"listSchools"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "12.9716"
+						},
+						{
+							"key": "longitude",
+							"value": "77.5946"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
